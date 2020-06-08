@@ -15,3 +15,7 @@ network_param keeps different network configurations (basically edit here) and t
 if we make a different network architecture, we might need to change the dataset to not have the modality
 and adjust the create_network function, the 5 modalities are hardcoded there, didnt find other hardcoded places
 training the model takes a lot on my pc, might need to run for a day or so, maybe something remote running would be nice, or i try to use my laptop for it
+
+changes:
+added run_replications_mvae_test.sh
+removed other datasets from test_final_completeloss.py
