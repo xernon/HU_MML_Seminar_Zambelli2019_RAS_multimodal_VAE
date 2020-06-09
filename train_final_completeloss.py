@@ -18,29 +18,29 @@ X_init = 1*a["final_database_train"]
 if len(sys.argv)>2:
     #no q
     if "1" in sys.argv[1:][1]:
-        X_init[28:36] = np.full(X_init[28:36].shape,-2)
+        X_init[:,28:36] = np.full(X_init[:,28:36].shape,-2)
         if "e" in sys.argv[1:][1]:
-            X_init[0:8] = np.full(X_init[0:8].shape,-2)
+            X_init[:,:8] = np.full(X_init[:,0:8].shape,-2)
     # no xy
     if "2" in sys.argv[1:][1]:
-        X_init[36:44] = np.full(X_init[36:44].shape,-2)
+        X_init[:,36:44] = np.full(X_init[:,36:44].shape,-2)
         if "e" in sys.argv[1:][1]:
-            X_init[8:16] = np.full(X_init[8:16].shape,-2)
+            X_init[:,8:16] = np.full(X_init[:,8:16].shape,-2)
     # no touch
     if "3" in sys.argv[1:][1]:
-        X_init[44:46] = np.full(X_init[44:46].shape,-2)
+        X_init[:,44:46] = np.full(X_init[:,44:46].shape,-2)
         if "e" in sys.argv[1:][1]:
-            X_init[16:18] = np.full(X_init[16:18].shape,-2)
+            X_init[:,16:18] = np.full(X_init[:,16:18].shape,-2)
     # no sound
     if "4" in sys.argv[1:][1]:
-        X_init[46:48] = np.full(X_init[46:48].shape,-2)
+        X_init[:,46:48] = np.full(X_init[:,46:48].shape,-2)
         if "e" in sys.argv[1:][1]:
-            X_init[18:20] = np.full(X_init[18:20].shape,-2)
+            X_init[:,18:20] = np.full(X_init[:,18:20].shape,-2)
     # no cmd
     if "5" in sys.argv[1:][1]:
-        X_init[48:56] = np.full(X_init[48:56].shape,-2)
+        X_init[:,48:56] = np.full(X_init[:,48:56].shape,-2)
         if "e" in sys.argv[1:][1]:
-            X_init[20:28] = np.full(X_init[20:28].shape,-2)
+            X_init[:,20:28] = np.full(X_init[:,20:28].shape,-2)
 
 X_augm_train = X_init #np.append(X_train_all,X_train_no_mc,axis=0)
 print(X_augm_train.shape)
@@ -516,7 +516,7 @@ def test_gpu():
 
 if __name__ == '__main__':
 
-    test_gpu()
+    #test_gpu()
 
     learning_rate = 0.00005
     batch_size = 1000
