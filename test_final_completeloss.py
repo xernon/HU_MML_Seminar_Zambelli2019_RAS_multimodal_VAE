@@ -19,6 +19,24 @@ print("Loading dataset...")
 # a = scipy.io.loadmat("matlab/database/n_database.mat")
 a = scipy.io.loadmat("matlab/database/final_database_test.mat")
 X_init = 1*a["final_database_test"]
+
+if len(sys.argv)>2:
+    #no q
+    if "1" in sys.argv[1:][1]:
+        X_init[:,:8] = np.full(X_init[:,0:8].shape,-2)
+    # no xy
+    if "2" in sys.argv[1:][1]:
+        X_init[:,8:16] = np.full(X_init[:,8:16].shape,-2)
+    # no touch
+    if "3" in sys.argv[1:][1]:
+        X_init[:,16:18] = np.full(X_init[:,16:18].shape,-2)
+    # no sound
+    if "4" in sys.argv[1:][1]:
+        X_init[:,18:20] = np.full(X_init[:,18:20].shape,-2)
+    # no cmd
+    if "5" in sys.argv[1:][1]:
+        X_init[:,20:28] = np.full(X_init[:,20:28].shape,-2)
+
 X_augm_test = X_init
 print(X_augm_test.shape)
 
