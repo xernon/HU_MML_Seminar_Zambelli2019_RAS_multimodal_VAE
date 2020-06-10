@@ -3,7 +3,7 @@
 mkdir replications_mvae
 cd replications_mvae
 
-for i in "4e" "5e" "3e" "2e" "1e"
+for i in "4e" "5e" "3e" "2e" "1e" ""
 do
     echo "run $i\_2"
     mkdir run_$i\_2
