@@ -7,7 +7,7 @@ title_names = {'q_0','q_1','q_2','q_3','x_L','y_L','x_R','y_R','p','s','u_0','u_
 Dir=dir('./run_*');
 results=nan(2,4,length(Dir));
 results_gdoc=nan(2,3,length(Dir));
-
+run_names=[];
 %%
 disp('--------  ---------')
 
@@ -46,12 +46,14 @@ results(2,2,rep)=err_droniou_martina_test4_perc;
 
 results_gdoc(1,2,rep)= immse(double(x_reconstruct(:,index)),ref(:,index));
 results_gdoc(2,2,rep)= results_gdoc(1,2,rep)/4;
-
+run_names=[run_names; string(Dir(rep).name)];
 end
+run_names
 disp('-------- case_based ---------')
 results
 disp('-------- googledoc_based ---------')
 results_gdoc
+table(run_names', results, results_gdoc)
 
 Qresults = quantile(results,[.05 .25 .50 .75 .95],3)
 Qresults_gdoc = quantile(results_gdoc,[.05 .25 .50 .75 .95],3)
