@@ -5,9 +5,9 @@ cd replications_mvae
 
 for i in "4e" "5e" "3e" "2e" "1e"
 do
-    echo "run $i_2"
-    mkdir run_$i_2
-    cd run_$i_2
+    echo "run $i\_2"
+    mkdir run_$i\_2
+    cd run_$i\_2
     ln -s ../../matlab ./
 
     python ../../train_final_completeloss.py 1 $i
