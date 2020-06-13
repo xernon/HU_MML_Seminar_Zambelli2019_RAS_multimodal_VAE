@@ -163,4 +163,5 @@ with tf.Graph().as_default() as g:
       x_pred, x_pred_log_sigma_sq = model.reconstruct(sess,x_sample_nv) 
 
       scipy.io.savemat("results/mvae_final_completeloss_testPred.mat",{"x_pred":x_pred,"x_pred_log_sigma_sq":x_pred_log_sigma_sq,"x_sample":x_sample_nv})
+      scipy.io.savemat("results/mvae_test_data.mat",{"X_augm_test":X_augm_test})
 

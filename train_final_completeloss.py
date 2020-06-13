@@ -510,4 +510,5 @@ if __name__ == '__main__':
     
     with tf.device('/device:GPU:0'):
         train_whole(sess,vae, X_augm_train, training_epochs=80000,batch_size=batch_size)
+    scipy.io.savemat("results/mvae_train_data.mat",{"X_augm_train":X_augm_train})
 
