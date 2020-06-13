@@ -12,7 +12,7 @@ do
 
     python ../../train_final_completeloss.py 1 $i
     mkdir results
-    python ../../test_final_completeloss.py 1 $1
+    python ../../test_final_completeloss.py 1 $i
     cd ../
     cp -a "/content/HU_MML_Seminar_Zambelli2019_RAS_multimodal_VAE/replications_mvae" "/content/drive/My Drive/mml/data"
 done
