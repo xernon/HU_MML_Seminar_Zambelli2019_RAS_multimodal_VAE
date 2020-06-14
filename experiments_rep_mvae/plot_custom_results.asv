@@ -1,0 +1,13 @@
+close all
+clear
+
+title_names = {'q_0','q_1','q_2','q_3','x_L','y_L','x_R','y_R','p','s','u_0','u_1','u_2','u_3'};
+Dir=dir('./run_*');
+scenarios=[];
+for d = dir('scenario*')
+    scenarios=scenarios + 
+    for r = dir(d.name + '/run*')
+       scenarios 
+    end
+end
+    
